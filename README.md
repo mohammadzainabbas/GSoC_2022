@@ -17,7 +17,7 @@ __Author__: [Mohammad Zain Abbas](https://github.com/mohammadzainabbas)
 
 __Organisation__: [Homebrew](https://github.com/Homebrew)
 
-__Project__: [Adding a livecheck Formula DSL and migrating Livecheckables to homebrew/core](https://github.com/Homebrew/brew/issues/7027)
+__Project__: [Autobumping resources in Formulae](https://github.com/Homebrew/gsoc/issues/49)
 
 __Mentors__: [Nanda H Krishna](https://github.com/nandahkrishna), [Sam Ford](https://github.com/samford), [Rui Chen](https://github.com/chenrui333), [Mike McQuaid](https://github.com/MikeMcQuaid)
 
