@@ -1,7 +1,5 @@
 ## GSoC 2022 - Report
 
-# GSoC 2020 Report
-
 <div align="center" dir="auto" style="
     display: flex;
     justify-content: space-evenly;
@@ -14,13 +12,14 @@
   </a>
 </div>
 
-**Author**: [Mohammad Zain Abbas](https://github.com/mohammadzainabbas)
 
-**Organisation**: [Homebrew](https://github.com/Homebrew)
+__Author__: [Mohammad Zain Abbas](https://github.com/mohammadzainabbas)
 
-**Project**: [Adding a livecheck Formula DSL and migrating Livecheckables to homebrew/core](https://github.com/Homebrew/brew/issues/7027)
+__Organisation__: [Homebrew](https://github.com/Homebrew)
 
-**Mentors**: [Nanda H Krishna](https://github.com/nandahkrishna), [Sam Ford](https://github.com/samford), [Rui Chen](https://github.com/chenrui333), [Mike McQuaid](https://github.com/MikeMcQuaid)
+__Project__: [Adding a livecheck Formula DSL and migrating Livecheckables to homebrew/core](https://github.com/Homebrew/brew/issues/7027)
+
+__Mentors__: [Nanda H Krishna](https://github.com/nandahkrishna), [Sam Ford](https://github.com/samford), [Rui Chen](https://github.com/chenrui333), [Mike McQuaid](https://github.com/MikeMcQuaid)
 
 ## Project Description
 
