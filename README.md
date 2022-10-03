@@ -27,7 +27,11 @@ Homebrew has a `brew livecheck` command which checks upstream sources (_web page
 
 Many Homebrew packages use resources, a special kind of package dependency. While Homebrew has tools which automatically upgrade packages to new versions, this feature doesn't work with resources. This project will enhance Homebrew's existing livecheck feature.
 
-Prior to this GSoC project, these `livecheck` instructions were found in the homebrew/livecheck tap's `Livecheckables` folder. "Livecheckable" files were minimal substitutes for formulae and only consisted of a class with `livecheck` information inside. Throughout `livecheck`'s development, there was a desire to eventually incorporate this information into homebrew/core formulae, so the livecheckable files were merely a stopgap measure.
+Prior to this GSoC project, many Formulae have resources that need to be bumped manually, which requires some searching. It was suggested earlier to have `livecheck` or `bump` like tooling to help automate this, as most resource updates have a clear _strategy_. (Something, similar to what already exists for many Formulae with _PyPI resources_ using `brew update-python-resources`).
+
+Since the last GSoC, the _homebrew/livecheck_ tap was no longer needed, and thus was deprecated. All the work related to the `brew livecheck` command was done in _Homebrew/brew_, and work on `livecheck` blocks was done in _homebrew/core_ formulae.
+
+
 
 The `livecheck` information was originally formatted as a hash argument to a `livecheck` method. While this format was functional, it didn't follow the existing norms within formulae and would need to be modified. Homebrew uses various domain-specific languages (DSLs) when establishing formula information, so it was necessary to add a `livecheck` DSL to the `Formula` class before the `livecheck` information could be incorporated into homebrew/core formulae.
 
@@ -37,31 +41,27 @@ Outside of these initial goals, we also decided to incorporate the `brew liveche
 
 As a result of this project, the homebrew/livecheck tap is no longer needed and has been deprecated. Further work related to the `brew livecheck` command will happen in Homebrew/brew and work on `livecheck` blocks will happen in homebrew/core formulae.
 
+#
 ## Completed Tasks
 
-* Implemented a `livecheck` DSL in Homebrew/brew and incorporated it into the `Formula` class
-* Added support for the `livecheck` DSL to the `brew livecheck` command
-* Updated existing livecheckables to use the new DSL format
-* Removed support for the old livecheckable format from `brew livecheck`
-* Added the ability to reference certain formula URLs as `url` symbol arguments (`:head`, `:homepage`, `:stable`)
-* Updated livecheckables to use URL symbols, where possible
-* Added autocompletion for `brew livecheck`
-* Added `url` information to the livecheckables that only contained a regex
-* Added livecheckables for some of the formulae that require an explicit check to be able to identify versions
-* Updated existing livecheckables to bring them closer to current standards
-* Integrated the `livecheck` blocks found in livecheckable files into their respective homebrew/core formulae
-* Integrated the `brew livecheck` command into Homebrew/brew as a `dev-cmd`
-* Removed all files from the homebrew/livecheck tap and deprecated it
+- [x] Extended the `livecheck` DSL to work for resources.
+- [x] Added support for extended `livecheck` DSL to the `brew livecheck` command.
+- [x] Augmented `brew livecheck` with an option to retrieve resource versions.
+- [x] Updated output format (_debug_, _json_, _verbose_) for `brew livecheck` command when given new `--resources` flag.
+- [x] Added tests for new changes to `brew livecheck` command in _homebrew/brew_. 
+- [x] Updated documentation for `brew livecheck` to incorporate the changes being made.
+- [x] Added resource `livecheck` blocks in multiple Formulae in _homebrew/core_.
+- [x] Added autocompletion for `brew livecheck` (automatically done for resource)
 
 ## Ongoing and Future Tasks
 
-* Add RuboCops to enforce standards for `livecheck` block information
-* Add/improve network-related `livecheck` tests
-* Other improvements to `livecheck`, including adding `livecheck` blocks to formulae, adding a progress bar for JSON output, documentation, etc.
+- [] Add more resource `livecheck` blocks to several other Formulae in _homebrew/core_.
+- [] Implement a wrapper `brew update-resources` command on top of `brew livecheck`.
+- [] Add default strategies meant for resources from specific sources (such as _RubyGems_, _CPAN_, etc).
 
 ## Challenges and Takeaways
 
-* Before GSoC, I had zero knowledge of Ruby. As an aspiring polyglot (human and programming languages), learning a new language was a fun challenge. Ruby is now one of my favourite languages and I definitely see myself brewing up projects using it.
+* Prior to GSoC, I had zero knowledge of Ruby. As an aspiring polyglot (human and programming languages), learning a new language was a fun challenge. Ruby is now one of my favourite languages and I definitely see myself brewing up projects using it.
 * Homebrew has a huge codebase, it took quite some time to wrap my head around some of the internals that were central to this project.
 * I had other work alongside this project, and one of the biggest challenges was time management. I identified a few strategies that worked for me, and I was able to plan ahead and complete my work efficiently.
 * I was able to automate some of the work by writing scripts, something I enjoy doing. With this I was able to identify what tasks could be automated and how, complete them quickly and gain some extra Ruby knowledge.
