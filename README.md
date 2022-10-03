@@ -23,9 +23,9 @@ __Mentors__: [Nanda H Krishna](https://github.com/nandahkrishna), [Sam Ford](htt
 
 ## Project Description
 
-Homebrew has a `brew livecheck` command which checks upstream sources (_web pages_, _files_, _Git repositories_) to identify the latest version of software in a formula and cask. `livecheck` uses its built-in strategies to identify versions for certain URLs and this works fine for some formulae. However, it is sometimes necessary to provide explicit information to `livecheck`, telling it where to check and how to identify versions in the fetched content.
+Homebrew has a `brew livecheck` command which checks upstream sources (_web pages_, _files_, _Git repositories_) to identify the latest version of software in a _formula_ and _cask_. `livecheck` uses its built-in strategies to identify versions for certain URLs and this works fine for some formulae. However, it is sometimes necessary to provide explicit information to `livecheck`, telling it where to check and how to identify versions in the fetched content.
 
-Many Homebrew packages use resources, a special kind of package dependency. While Homebrew has tools which automatically upgrade packages to new versions, this feature doesn't work with resources. This project will enhance Homebrew's existing livecheck feature.
+Many Homebrew packages use resources, a special kind of package dependency. While Homebrew has tools which automatically upgrade packages to new versions, this feature doesn't work with resources. The main aim of this project was to enhance Homebrew's existing `livecheck` feature.
 
 Prior to this GSoC project, many Formulae have resources that need to be bumped manually, which requires some searching. It was suggested earlier to have `livecheck` or `bump` like tooling to help automate this, as most resource updates have a clear _strategy_. (Something, similar to what already exists for many Formulae with _PyPI resources_ using `brew update-python-resources`).
 
@@ -77,33 +77,24 @@ I'd like to thank my mentors for helping me out throughout this project. A speci
 
 #### GSoC
 
-- [x] [Extend the livecheck DSL to work for resources brew#13496](https://github.com/Homebrew/brew/pull/13496)
-* \#7578 - [livecheck: add component order rubocop](https://github.com/Homebrew/brew/pull/7578)
-* \#7625 - [livecheck: modified urls cop](https://github.com/Homebrew/brew/pull/7625)
-* \#7668 - [livecheck: reference Formula URLs](https://github.com/Homebrew/brew/pull/7668)
-* \#7671 - [livecheck: modify regex in tests](https://github.com/Homebrew/brew/pull/7671)
-* \#7748 - [Add completion for livecheck](https://github.com/Homebrew/brew/pull/7748)
-* \#8180 - [livecheck migration: add `brew livecheck` developer command](https://github.com/Homebrew/brew/pull/8180)
-* \#8254 - [livecheck migration: create Homebrew::Livecheck](https://github.com/Homebrew/brew/pull/8254)
-* \#8255 - [livecheck migration: add strategies](https://github.com/Homebrew/brew/pull/8255)
-* \#8544 - [livecheck: remove test for `livecheck_formulae`](https://github.com/brew/pull/8544)
+- [x] [Extend the `livecheck` DSL to work for resources brew#13496](https://github.com/Homebrew/brew/pull/13496)
+- [x] [Augment `brew livecheck` with a `--resources` option to check resources brew#13613](https://github.com/Homebrew/brew/pull/13613)
+- [x] [Update documentation for `brew livecheck` brew#13933](https://github.com/Homebrew/brew/pull/13933)
 
 ### [Homebrew/homebrew-core](https://github.com/Homebrew/homebrew-core)
 
-#### Pre-GSoC
-
-* \#40791 - [anime-downloader 3.6.3 (new formula)](https://github.com/Homebrew/homebrew-core/pull/40791)
-* \#45722 - [anime-downloader 4.0.1](https://github.com/Homebrew/homebrew-core/pull/45722)
-
 #### GSoC
 
-* \#54565 - [Add livecheck block to a52dec.rb](https://github.com/Homebrew/homebrew-core/pull/54565)
-* \#54595 - [aacgain: add livecheck block](https://github.com/Homebrew/homebrew-core/pull/54595)
-* \#54597 - [imap-uw: add livecheck block](https://github.com/Homebrew/homebrew-core/pull/54597)
-* \#55321 - [detekt: update homepage](https://github.com/Homebrew/homebrew-core/pull/55321)
-* \#55950 - [livecheck: modify Formula urls](https://github.com/Homebrew/homebrew-core/pull/55950)
-* \#56290 - [ossp-uuid: update homepage](https://github.com/Homebrew/homebrew-core/pull/56290)
-* \#57627 - [aacgain: update livecheck regex](https://github.com/Homebrew/homebrew-core/pull/57627)
-* \#58760 - [vsts-cli: deprecate](https://github.com/Homebrew/homebrew-core/pull/58760)
-* \#60324 - [livecheck: migrate livecheckables to livecheck blocks](https://github.com/Homebrew/homebrew-core/pull/60324)
+- [x] [influxdb: added livecheck block for resource `pkg-config-wrapper` homebrew-core#112155](https://github.com/Homebrew/homebrew-core/pull/112155)
+- [x] [flux: added livecheck block for resource `pkg-config-wrapper` homebrew-core#112156](https://github.com/Homebrew/homebrew-core/pull/112156)
+- [x] [v8 10.5.218.8 homebrew-core#111013](https://github.com/Homebrew/homebrew-core/pull/111013)
+- [x] [luvit: added livecheck block for resource `luvi` homebrew-core#112158](https://github.com/Homebrew/homebrew-core/pull/112158)
+- [x] [luvit: added livecheck block for resource `lit` homebrew-core#112157](https://github.com/Homebrew/homebrew-core/pull/112157)
+- [x] [Add livecheck block for resource `pkg-config-wrapper` for Formulae `influxdb` and `flux` homebrew-core#111257](https://github.com/Homebrew/homebrew-core/pull/111257)
+- [x] [template-glib 3.36.0 homebrew-core#111021](https://github.com/Homebrew/homebrew-core/pull/111021)
 
+### [Homebrew/homebrew-cask](https://github.com/Homebrew/homebrew-cask)
+
+#### Pre-GSoC
+
+- [x] [Updated postman from 9.0.7 to 9.1.1 homebrew-cask#112984](https://github.com/Homebrew/homebrew-cask/pull/112984)
