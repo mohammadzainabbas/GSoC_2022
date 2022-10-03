@@ -1,12 +1,14 @@
 ## GSoC 2022 - Report
 
 <div align="center">
-  <a href="https://summerofcode.withgoogle.com" rel="nofollow">
-    <img src="assets/GSoC.png" alt="GSoC" width="80" style="max-width: 100%;">
-  </a>
-  <a href="https://github.com/Homebrew">
-    <img src="assets/Homebrew.png" alt="Homebrew" width="80" style="max-width: 100%;">
-  </a>
+  <div style="display: flex; align-items: flex-start;">
+    <a href="https://summerofcode.withgoogle.com" rel="nofollow">
+      <img src="assets/GSoC.png" alt="GSoC" width="80" style="max-width: 100%;">
+    </a>
+    <a href="https://github.com/Homebrew">
+      <img src="assets/Homebrew.png" alt="Homebrew" width="80" style="max-width: 100%;">
+    </a>
+  </div>
 </div>
 
 __Author__: [Mohammad Zain Abbas](https://github.com/mohammadzainabbas)
