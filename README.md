@@ -55,9 +55,9 @@ As a result of this project, the homebrew/livecheck tap is no longer needed and 
 
 ## Ongoing and Future Tasks
 
-- [] Add more resource `livecheck` blocks to several other Formulae in _homebrew/core_.
-- [] Implement a wrapper `brew update-resources` command on top of `brew livecheck`.
-- [] Add default strategies meant for resources from specific sources (such as _RubyGems_, _CPAN_, etc).
+- [ ] Add more resource `livecheck` blocks to several other Formulae in _homebrew/core_.
+- [ ] Implement a wrapper `brew update-resources` command on top of `brew livecheck`.
+- [ ] Add default strategies meant for resources from specific sources (such as _RubyGems_, _CPAN_, etc).
 
 ## Challenges and Takeaways
 
