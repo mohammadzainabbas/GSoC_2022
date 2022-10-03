@@ -61,15 +61,15 @@ As a result of this project, the homebrew/livecheck tap is no longer needed and 
 
 ## Challenges and Takeaways
 
-* Prior to GSoC, I had zero knowledge of Ruby. As an aspiring polyglot (human and programming languages), learning a new language was a fun challenge. Ruby is now one of my favourite languages and I definitely see myself brewing up projects using it.
-* Homebrew has a huge codebase, it took quite some time to wrap my head around some of the internals that were central to this project.
-* I had other work alongside this project, and one of the biggest challenges was time management. I identified a few strategies that worked for me, and I was able to plan ahead and complete my work efficiently.
-* I was able to automate some of the work by writing scripts, something I enjoy doing. With this I was able to identify what tasks could be automated and how, complete them quickly and gain some extra Ruby knowledge.
-* My code quality has definitely improved, thanks to detailed reviews from the mentors. I'm working on improving the quality of my documentation and tests.
+* Prior to GSoC, I had zero knowledge of Ruby (or meta-programming in Ruby). As an enthusiastic polyglot (human and programming languages), learning a new language was a fun challenge. Now, I am more comfortable with Ruby, and I have even started to use it for some personal projects.
+* __Homebrew__ has a huge codebase, it took quite some time to wrap my head around some of the internals that were central to this project.
+* One of the diffculity that I faced was about debugging a Ruby code, I extensively used interactive Ruby (`brew irb`) to debug and to gain some extra Ruby knowledge.
+* I had other work alongside this project, and one of the biggest challenges was time management. I kept my mentor well informed about the engagements in advanced, this helped us to plan ahead and complete the work efficiently.
+* My ruby code quality has definitely improved, thanks to detailed reviews from the mentors. I'm working on further improving the quality of my work.
 
 ## Acknowledgements
 
-I'd like to thank my mentors for helping me throughout this project. A special shoutout to my primary mentor Sam for their amazing and comprehensive code reviews and guidance. I enjoyed our weekly meetings and am extremely grateful to them for taking the time to answer all my questions. The Homebrew community is welcoming and friendly, and the maintainers are just brilliant. I'm glad I got an opportunity to work closely with them thanks to GSoC, and I'm looking forward to contributing to Homebrew in the future. I'd also like to acknowledge my wonderful co-GSoCers, [rmNULL](https://github.com/rmNULL) and [Vidushee Amoli](https://github.com/VidusheeAmoli), it was great fun working with them.
+I'd like to thank my mentors for helping me out throughout this project. A special shoutout to my primary mentor [Nanda H Krishna](https://github.com/nandahkrishna) (and co-mentor [Sam Ford](https://github.com/samford)) for their amazing and comprehensive code reviews and guidance. I enjoyed our weekly meetings and am extremely grateful to them for taking the time to answer all my questions. The __Homebrew__ community is welcoming and friendly, and the maintainers are just brilliant and really helpful. I'm glad that I got an opportunity to work closely with them thanks to GSoC, and I'm looking forward to contributing to __Homebrew__ in the future as well.
 
 ## Pull Requests
 
@@ -77,7 +77,7 @@ I'd like to thank my mentors for helping me throughout this project. A special s
 
 #### GSoC
 
-* \#7179 - [Livecheck Formula DSL](https://github.com/Homebrew/brew/pull/7179)
+- [x] [Extend the livecheck DSL to work for resources brew#13496](https://github.com/Homebrew/brew/pull/13496)
 * \#7578 - [livecheck: add component order rubocop](https://github.com/Homebrew/brew/pull/7578)
 * \#7625 - [livecheck: modified urls cop](https://github.com/Homebrew/brew/pull/7625)
 * \#7668 - [livecheck: reference Formula URLs](https://github.com/Homebrew/brew/pull/7668)
