@@ -20,9 +20,7 @@ __Mentors__: [Nanda H Krishna](https://github.com/nandahkrishna), [Sam Ford](htt
 #
 ## Project Description
 
-Homebrew has a `brew livecheck` command which checks upstream sources (_web pages_, _files_, _Git repositories_) to identify the latest version of software in a _formula_ and _cask_. `livecheck` uses its built-in strategies to identify versions for certain URLs and this works fine for some formulae. However, it is sometimes necessary to provide explicit information to `livecheck`, telling it where to check and how to identify versions in the fetched content.
-
-Many Homebrew packages use resources, a special kind of package dependency. While Homebrew has tools which automatically upgrade packages to new versions, this feature doesn't work with resources. The main aim of this project was to enhance Homebrew's existing `livecheck` feature.
+Homebrew has a `brew livecheck` command which checks upstream sources (_web pages_, _files_, _Git repositories_) to identify the latest version of software in a _formula_ and _cask_. Many Homebrew packages use _resources_, a special kind of package dependency. While Homebrew has tools which automatically upgrade packages to new versions, this feature doesn't work with _resources_. The main aim of this project was to enhance Homebrew's existing `livecheck` feature to work for _resources_ as well.
 
 Prior to this GSoC project, many Formulae have resources that need to be bumped manually, which requires some searching. It was [suggested earlier](https://github.com/Homebrew/gsoc/issues/49#issue-1124437013) to have `livecheck` or `bump` like tooling to help automate this, as most resource updates have a clear _strategy_. (Something, similar to what already exists for many Formulae with _PyPI resources_ using `brew update-python-resources`). 
 
@@ -33,9 +31,9 @@ However later on, following objectives were [defined](https://github.com/Homebre
 - [ ] Add livecheck blocks for resources in homebrew/core.
 - [ ] Implement a brew update-resources command and augment brew livecheck with an option to retrieve resource versions.
 
-Homebrew uses various domain-specific languages (DSLs) when establishing `formula`, `cask` and `resource` information, so it was necessary to extend the `livecheck` DSL for the `Resource` class before the `livecheck` command could be used to retrieve resources versions for a given formulae in `homebrew/core`.
+Homebrew uses various domain-specific languages (_DSLs_) when establishing `formula`, `cask` and `resource` information, so it was necessary to extend the `livecheck` DSL for the `Resource` class before the `brew livecheck` command could be used to retrieve resources versions for a given formulae in `homebrew/core`.
 
-Extending the `livecheck` DSL and augmenting `brew livecheck` command to work for resources were two main goals of this GSoC project. Extending `livecheck` DSL was the first task that was completed and it was implemented early in the project. Several modifications were done to allow `brew livecheck` command to be work for resources (and keeping it consistent with the already existing workflow). This part was the main part of the GSoC, thus it took a while to get reviewed by the mentors and other maintainers.
+Extending the `livecheck` DSL and augmenting `brew livecheck` command to work for resources were two main goals of this GSoC project. Extending `livecheck` DSL was the first task that was completed and it was implemented earlier in the project. Several modifications were done to allow `brew livecheck` command to be work for resources (and keeping it consistent with the already existing workflow). This part was the main part of the GSoC, thus it took a while to get it reviewed by the mentors and other maintainers.
 
 Since the last GSoC, the _homebrew/livecheck_ tap was no longer needed, and thus was deprecated. All the work related to the `brew livecheck` command was done in _Homebrew/brew_, and work on `livecheck` blocks was done in _homebrew/core_ formulae.
 
@@ -45,7 +43,7 @@ As a result of this project, now `brew livecheck` command retrieves `livecheck` 
 brew livecheck influxdb --resources
 ```
 
-will show livecheck output for `influxdb` formula and it's resources.
+will show livecheck output for `influxdb` formula and it's _resources_.
 
 #
 ## Completed Tasks
