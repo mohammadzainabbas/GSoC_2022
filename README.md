@@ -1,14 +1,12 @@
 ## GSoC 2022 - Report
 
 <div align="center">
-  <div style="display: flex; align-items: flex-start;">
-    <a href="https://summerofcode.withgoogle.com" rel="nofollow">
-      <img src="assets/GSoC.png" alt="GSoC" width="80" style="max-width: 100%;">
-    </a>
-    <a href="https://github.com/Homebrew">
-      <img src="assets/Homebrew.png" alt="Homebrew" width="80" style="max-width: 100%;">
-    </a>
-  </div>
+  <a href="https://summerofcode.withgoogle.com" rel="nofollow">
+    <img src="assets/GSoC.png" alt="GSoC" width="80" style="max-width: 100%;">
+  </a>
+  <a href="https://github.com/Homebrew">
+    <img src="assets/Homebrew.png" alt="Homebrew" width="80" style="max-width: 100%;">
+  </a>
 </div>
 
 __Author__: [Mohammad Zain Abbas](https://github.com/mohammadzainabbas)
@@ -19,6 +17,7 @@ __Project__: [Autobumping resources in Formulae](https://github.com/Homebrew/gso
 
 __Mentors__: [Nanda H Krishna](https://github.com/nandahkrishna), [Sam Ford](https://github.com/samford), [Rui Chen](https://github.com/chenrui333), [Mike McQuaid](https://github.com/MikeMcQuaid)
 
+#
 ## Project Description
 
 Homebrew has a `brew livecheck` command which checks upstream sources (_web pages_, _files_, _Git repositories_) to identify the latest version of software in a _formula_ and _cask_. `livecheck` uses its built-in strategies to identify versions for certain URLs and this works fine for some formulae. However, it is sometimes necessary to provide explicit information to `livecheck`, telling it where to check and how to identify versions in the fetched content.
