@@ -1,6 +1,6 @@
 ## GSoC 2022 - Report
 
-<div align="center" dir="auto" style="
+<div style="
     display: flex;
     justify-content: space-evenly;
 ">
@@ -11,7 +11,6 @@
     <img src="https://raw.githubusercontent.com/nandahkrishna/GSoC/master/assets/Homebrew.png" alt="Homebrew" width="80" style="max-width: 100%;">
   </a>
 </div>
-
 
 __Author__: [Mohammad Zain Abbas](https://github.com/mohammadzainabbas)
 
@@ -27,19 +26,28 @@ Homebrew has a `brew livecheck` command which checks upstream sources (_web page
 
 Many Homebrew packages use resources, a special kind of package dependency. While Homebrew has tools which automatically upgrade packages to new versions, this feature doesn't work with resources. The main aim of this project was to enhance Homebrew's existing `livecheck` feature.
 
-Prior to this GSoC project, many Formulae have resources that need to be bumped manually, which requires some searching. It was suggested earlier to have `livecheck` or `bump` like tooling to help automate this, as most resource updates have a clear _strategy_. (Something, similar to what already exists for many Formulae with _PyPI resources_ using `brew update-python-resources`).
+Prior to this GSoC project, many Formulae have resources that need to be bumped manually, which requires some searching. It was [suggested earlier](https://github.com/Homebrew/gsoc/issues/49#issue-1124437013) to have `livecheck` or `bump` like tooling to help automate this, as most resource updates have a clear _strategy_. (Something, similar to what already exists for many Formulae with _PyPI resources_ using `brew update-python-resources`). 
+
+However later on, following objectives were [defined](https://github.com/Homebrew/gsoc/issues/49#issuecomment-1040520006) to be achieved during GSoC:
+
+- [ ] Extend the livecheck DSL to work for resources.
+- [ ] Add default strategies meant for resources from specific sources (such as RubyGems, CPAN, etc.).
+- [ ] Add livecheck blocks for resources in homebrew/core.
+- [ ] Implement a brew update-resources command and augment brew livecheck with an option to retrieve resource versions.
+
+Homebrew uses various domain-specific languages (DSLs) when establishing `formula`, `cask` and `resource` information, so it was necessary to extend the `livecheck` DSL for the `Resource` class before the `livecheck` command could be used to retrieve resources versions for a given formulae in `homebrew/core`.
+
+Extending the `livecheck` DSL and augmenting `brew livecheck` command to work for resources were two main goals of this GSoC project. Extending `livecheck` DSL was the first task that was completed and it was implemented early in the project. Several modifications were done to allow `brew livecheck` command to be work for resources (and keeping it consistent with the already existing workflow). This part was the main part of the GSoC, thus it took a while to get reviewed by the mentors and other maintainers.
 
 Since the last GSoC, the _homebrew/livecheck_ tap was no longer needed, and thus was deprecated. All the work related to the `brew livecheck` command was done in _Homebrew/brew_, and work on `livecheck` blocks was done in _homebrew/core_ formulae.
 
+As a result of this project, now `brew livecheck` command retrieves `livecheck` information for resources as well (for a given formula). i.e:
 
+```bash
+brew livecheck influxdb --resources
+```
 
-The `livecheck` information was originally formatted as a hash argument to a `livecheck` method. While this format was functional, it didn't follow the existing norms within formulae and would need to be modified. Homebrew uses various domain-specific languages (DSLs) when establishing formula information, so it was necessary to add a `livecheck` DSL to the `Formula` class before the `livecheck` information could be incorporated into homebrew/core formulae.
-
-Adding the `livecheck` DSL and incorporating the livecheckables into homebrew/core formulae were two expressed goals of this GSoC project. The `livecheck` DSL was the first task that was completed and it was implemented early in the project. Due to the ongoing work on livecheckables in the homebrew/livecheck tap, we waited until close to the end of GSoC to migrate the `livecheck` blocks into homebrew/core formulae.
-
-Outside of these initial goals, we also decided to incorporate the `brew livecheck` command into the main Homebrew/brew repository, making it a built-in developer command. Before this point, users were required to tap homebrew/livecheck to be able to use this command.
-
-As a result of this project, the homebrew/livecheck tap is no longer needed and has been deprecated. Further work related to the `brew livecheck` command will happen in Homebrew/brew and work on `livecheck` blocks will happen in homebrew/core formulae.
+will show livecheck output for `influxdb` formula and it's resources.
 
 #
 ## Completed Tasks
