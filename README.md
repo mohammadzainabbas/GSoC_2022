@@ -34,8 +34,6 @@ However later on, following objectives were [defined](https://github.com/Homebre
 Homebrew uses various domain-specific languages (_DSLs_) when establishing `formula`, `cask` and `resource` information, so it was necessary to extend the `livecheck` DSL for the `Resource` class before the `brew livecheck` command could be used to retrieve resources versions for a given formulae in `homebrew/core`.
 
 Extending the `livecheck` DSL and augmenting `brew livecheck` command to work for resources were two main goals of this GSoC project. Extending `livecheck` DSL was the first task that was completed and it was implemented earlier in the project. Several modifications were done to allow `brew livecheck` command to be work for resources (and keeping it consistent with the already existing workflow). This part was the main part of the GSoC, thus it took a while to get it reviewed by the mentors and other maintainers.
-<!-- 
-Since the last GSoC, the _homebrew/livecheck_ tap was no longer needed, and thus was deprecated. All the work related to the `brew livecheck` command was done in _Homebrew/brew_, and work on `livecheck` blocks was done in _homebrew/core_ formulae. -->
 
 As a result of this project, now `brew livecheck` command retrieves `livecheck` information for resources as well (for a given formula). i.e:
 
@@ -51,17 +49,14 @@ will show livecheck output for `influxdb` formula and it's _resources_.
 - [x] Extended the `livecheck` DSL to work for resources.
 - [x] Added support for extended `livecheck` DSL to the `brew livecheck` command.
 - [x] Augmented `brew livecheck` with an option to retrieve resource versions.
-<!-- - [x] Updated output format (_debug_, _json_, _verbose_) for `brew livecheck` command when given new `--resources` flag. -->
 - [x] Added tests for new changes to `brew livecheck` command in _homebrew/brew_. 
 - [x] Updated documentation for `brew livecheck` to incorporate the changes being made.
 - [x] Added resource `livecheck` blocks in few Formulae in _homebrew/core_.
-<!-- - [x] Added autocompletion for `brew livecheck` (automatically done for resource) -->
 
 ## Ongoing and Future Tasks
 
 - [ ] Add more resource `livecheck` blocks to several other Formulae in _homebrew/core_.
 - [ ] Enhance `brew bump` to work for livecheck resources.
-<!-- - [ ] Implement a wrapper `brew update-resources` command on top of `brew livecheck`. -->
 - [ ] Add default strategies meant for resources from specific sources (such as _RubyGems_, _CPAN_, etc).
 
 ## Challenges and Takeaways
@@ -73,19 +68,11 @@ will show livecheck output for `influxdb` formula and it's _resources_.
 * Sometimes, getting feedback/review on PRs took more time than what I expected, and it became an issue for other things in the project. My main takeaway here was to remain patient and keep asking for feedback/review on the communication channels. 
 * Thanks to the mentors' thorough reviews, I have learned a lot during my GSoC period.
 
-<!-- * Prior to GSoC, I had zero knowledge of Ruby (or meta-programming in Ruby). As an enthusiastic polyglot (human and programming languages), learning a new language was a fun challenge. Now, I am more comfortable with Ruby, and I have even started to use it for some personal projects.
-* __Homebrew__ has a huge codebase, it took quite some time to wrap my head around some of the internals that were central to this project.
-* One of the diffculity that I faced was about debugging a Ruby code, I extensively used interactive Ruby (`brew irb`) to debug and to gain some extra Ruby knowledge.
-* I had other work alongside this project, and one of the biggest challenges was time management. I kept my mentor well informed about the engagements in advanced, this helped us to plan ahead and complete the work efficiently.
-* My ruby code quality has definitely improved, thanks to detailed reviews from the mentors. I'm working on further improving the quality of my work. -->
-
 ## Acknowledgements
 
 I would like to thank my mentors for their support during this project, esp. to my main mentor [Nanda H Krishna](https://github.com/nandahkrishna) (and co-mentor [Sam Ford](https://github.com/samford)). They were really keen with their comprehensive code reviews and guidance. I also appreciated their taking the time to address all of my questions/ambiguities during our weekly meetings.
 
 I would also like to thank GSoC which provided me an opportunity to work with __Homebrew__ community, which I found to be quite helpful and humble. All the maintainers that I got to work with are simply great and incredibly helpful. I am glad that I got an opportunity to work closely with them, and I am looking forward to contributing to __Homebrew__ in the future as well.
-
-<!-- I'd like to thank my mentors for helping me out throughout this project. A special shoutout to my primary mentor [Nanda H Krishna](https://github.com/nandahkrishna) (and co-mentor [Sam Ford](https://github.com/samford)) for their amazing and comprehensive code reviews and guidance. I enjoyed our weekly meetings and am extremely grateful to them for taking the time to answer all my questions. The __Homebrew__ community is welcoming and friendly, and the maintainers are just brilliant and really helpful. I'm glad that I got an opportunity to work closely with them thanks to GSoC, and I'm looking forward to contributing to __Homebrew__ in the future as well. -->
 
 ## Pull Requests
 
