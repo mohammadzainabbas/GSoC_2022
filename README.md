@@ -79,6 +79,11 @@ I would also like to thank GSoC for providing me the opportunity to work with Ho
 - [x] [Augment `brew livecheck` with a `--resources` option to check resources brew#13613](https://github.com/Homebrew/brew/pull/13613)
 - [x] [Update documentation for `brew livecheck` brew#13933](https://github.com/Homebrew/brew/pull/13933)
 
+##### Releases
+
+- [x] [Homebrew/brew - 3.6.4](https://github.com/Homebrew/brew/releases/tag/3.6.4)
+- [x] [Homebrew/brew - 3.5.4](https://github.com/Homebrew/brew/releases/tag/3.5.4)
+
 ### [Homebrew/homebrew-core](https://github.com/Homebrew/homebrew-core)
 
 #### GSoC
@@ -96,3 +101,5 @@ I would also like to thank GSoC for providing me the opportunity to work with Ho
 #### Pre-GSoC
 
 - [x] [Updated postman from 9.0.7 to 9.1.1 homebrew-cask#112984](https://github.com/Homebrew/homebrew-cask/pull/112984)
+
+#
